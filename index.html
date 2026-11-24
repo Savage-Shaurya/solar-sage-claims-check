@@ -56,6 +56,36 @@ td.a{grid-column:1/-1;padding-left:36px;color:var(--mut)}
 <tr><td><a href="#p11">11</a></td><td>Low output is not always dust</td><td class="s" title="Partly handled">⚠️</td><td class="a">Add to 10.2: grid outages and curtailment are not separable.</td></tr>
 <tr><td><a href="#p12">12</a></td><td>Formulas</td><td class="s" title="Minor fixes">⚠️</td><td class="a">Define θ; soften the 5% alert; make Table 5.2 (85%) match.</td></tr>
 </tbody></table>
+<section class="card" id="plan" style="border-left-color:var(--acc)">
+<h2><span>What to say now &amp; what we can still finish</span></h2>
+<p class="small">"Say now" is an honest, tentative answer for the evaluators. 💻 = software/document work we can complete; 🔧 = needs hardware or a site visit.</p>
+<table>
+<thead><tr><th>Item</th><th>Say now (tentative)</th><th>Can finish?</th></tr></thead>
+<tbody>
+<tr><td>Savings / efficiency gain</td><td>"The model estimates roughly ₹3–4 lakh/yr net saving; we are re-validating it against the cleaning steps seen in the data."</td><td>💻 Rework the soiling model (step/saturating) and update all numbers · ~1 day</td></tr>
+<tr><td>CNN-LSTM</td><td>"Next step. We first built a validated baseline (leave-one-out, ±3.89 pts) that any deep model must beat."</td><td>💻 Train a small LSTM on the 508-day block data + weather, compare with baseline, report honestly · 1–2 days</td></tr>
+<tr><td>Pi Zero 2 W</td><td>"The drone only captures images; analysis runs on the ground computer."</td><td>💻 Remove from report, PPT, poster, figures · ~2 h</td></tr>
+<tr><td>Performance Ratio</td><td>"PR = final yield ÷ reference yield; e.g. 15 Oct: 3.67 ÷ 4.21 = 87.2 %."</td><td>✅ Done</td></tr>
+<tr><td>Pi 4B role</td><td>"Pi 4B was used for prototype readings only; the final system runs on a campus server."</td><td>💻 Add assumption + reword · ~1 h</td></tr>
+<tr><td>YOLO dataset</td><td>"Panel finding and dirt grading now use Claude vision plus pixel measurements, so no custom training set is needed; tested on public images."</td><td>💻 New dashboard (being built) + cite test images · today. Ask team for the TinyYOLO test size (91.3 % issue)</td></tr>
+<tr><td>Thapar data up front</td><td>"Our main result uses 17 months of real data from the 2.95 MWp Thapar plant."</td><td>💻 Add to abstract, Ch 1, PPT intro · ~1 h</td></tr>
+<tr><td>Simulations</td><td>"S1–S4 were early design checks; real plant data replaced them."</td><td>💻 Keep S1, trim S2–S4, drop Fig 5.10 · ~1 h</td></tr>
+<tr><td>Page 33 image</td><td>"Dashboard shown in Section 5.5."</td><td>💻 Real screenshot of the new dashboard · after build</td></tr>
+<tr><td>August synthetic data</td><td>Don't mention it.</td><td>💻 Delete + renumber · ~2 h</td></tr>
+<tr><td>Low output ≠ dust</td><td>"Campus-wide drops (cloud, rain, sensor faults) are filtered out; sudden block drops are flagged as faults, not dust. Grid outages need grid data."</td><td>💻 Add meter-vs-inverter and availability checks from existing data · ~½ day. Grid logs: request from PSPCL/estate office</td></tr>
+<tr><td>5 % alert threshold</td><td>"5 % was a starting value; measured daily noise is 2.8–5.5 %, so we use a multi-day threshold."</td><td>💻 Derive threshold from data (≈ 2× noise over 3 days) · ~2 h</td></tr>
+<tr><td>17-day routine</td><td>"About 17 days in November; shorter (~13 days) in dusty summer."</td><td>💻 Month-by-month routine table · ~1 h</td></tr>
+</tbody></table>
+<p class="fx">Needs hardware / field work 🔧 (say "planned field validation"):</p>
+<ul>
+<li>Drone flights over the campus roofs and image capture.</li>
+<li>Thermal camera survey for real hotspot temperatures (at ≥ 600 W/m² sun).</li>
+<li>Installing sensor nodes on the blocks for live readings.</li>
+<li>Accuracy check on naturally soiled panels (photo before/after a real cleaning).</li>
+<li>A cleaning log from the crew (dates per block) to confirm the detected cleanings.</li>
+</ul>
+</section>
+
 
 <section class="card warn" id="p1">
 <h2><span>1. Efficiency claims</span><span class="st">⚠️ Needs fix</span></h2>
